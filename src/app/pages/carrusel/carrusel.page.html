@@ -1,0 +1,20 @@
+<app-page-header titulo="Carrusel"></app-page-header>
+
+<ion-content>
+  <swiper-container
+    pagination="true"
+    navigation="true"
+    loop="true"
+    autoplay="true"
+    class="mySwiper"
+  >
+    <swiper-slide *ngFor="let imagen of usarCamara.getListaUrl(); index as position">
+      <ion-card>
+        <ion-img [src]="imagen"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Foto {{position}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
