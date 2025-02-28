@@ -1,0 +1,27 @@
+<app-page-header titulo="Reconocimiento de voz"></app-page-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Di "foto" para abrir la cámara</h2>
+
+  <!-- Tarjeta para mostrar el texto reconocido -->
+  <ion-card *ngIf="texto">
+    <ion-card-header>
+      <ion-card-title>Texto Reconocido</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ texto }}
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para iniciar la escucha -->
+  <ion-button expand="full" (click)="iniciarEscucha()" [disabled]="escuchando">
+    Escuchar Voz
+  </ion-button>
+
+  <!-- Botón para detener la escucha -->
+  <ion-button expand="full" (click)="detenerEscucha()" color="danger" [disabled]="!escuchando">
+    Detener
+  </ion-button>
+
+</ion-content>
